@@ -1,0 +1,41 @@
+[user]
+	name = acuelliot
+	email = elliot.hurdiss@acumenci.com
+[diff]
+	tool = p4merge
+[merge]
+    summary = true
+	tool = p4merge
+    prompt = false
+	keepBackup = false
+[rerere]
+	enabled = true
+[difftool "p4merge"]
+	path = C:/Program Files/Perforce/p4merge.exe
+[mergetool "p4merge"]
+	path = C:/Program Files/Perforce/p4merge.exe
+[core]
+	autocrlf = true
+	editor = notepad
+	trustctime = false
+[alias]
+    con = checkout -b
+    co = checkout
+    pushupstream = !git push --set-upstream origin `git symbolic-ref --short HEAD`
+    po = push origin master
+    p = pull
+    st = status
+    ru = remote update --prune
+    cm = commit -m
+    au = add -u
+    aa = add -A
+    ai = add -i
+    cu = clean -d -fx
+    pr = pull --rebase
+    mnff = merge --no-ff
+    fo = fetch origin
+    su = !git submodule sync && git submodule update --init --recursive
+    cos = "!f(){ git co "$1" && git su; };f"
+    lg = log --graph --decorate --oneline --date=relative --all 
+
+
